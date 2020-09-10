@@ -11,6 +11,7 @@ const indexRouter =require('./routes/index')
 const promoRouter =require('./routes/promotionRouter');
 const leaderRouter =require('./routes/leaderRouter');
 const userRouter =require('./routes/users');
+const favouriteRouter =require('./routes/favouriteRouter');
 const uploadRouter =require('./routes/uploadRouter');
 const mongoose = require('mongoose');
 var session = require('express-session');
@@ -51,6 +52,7 @@ app.use(passport.initialize());
 app.use('/', indexRouter);
 app.use('/users', userRouter);
 app.use(morgan('dev'));
+app.use('/favourites',favouriteRouter);
 app.use('/dishes', dishRouter);
 app.use('/promotions',promoRouter);
 app.use('/leaders',leaderRouter);

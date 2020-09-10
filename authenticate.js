@@ -25,7 +25,7 @@ var id;
 
 exports.jwtPassport = passport.use(new JwtStrategy(opts,
     (jwt_payload, done) => {
-        console.log("JWT payload: ", jwt_payload);
+        // console.log("JWT payload: ", jwt_payload);
         id = jwt_payload._id;
         User.findOne({_id: jwt_payload._id}, (err, user) => {
             if (err) {
